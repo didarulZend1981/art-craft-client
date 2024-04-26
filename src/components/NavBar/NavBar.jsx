@@ -1,9 +1,45 @@
+import { NavLink } from "react-router-dom";
 import Toggle from "../Toggle/Toggle";
 
+const links = <>
+  
+  <li className="m-[10px]">
+    <NavLink className={({ isActive }) =>
+              isActive ? 'text-red-500':'text-sky-700'
+            } to="/" >Home</NavLink></li>
+  <li className="m-[10px]">
+    <NavLink className={({ isActive }) =>
+              isActive ? 'text-red-500':'text-sky-700'
+            } to="/allArtCraft" >All Art & craft Items</NavLink></li>
+   <li className="m-[10px]">
+    <NavLink className={({ isActive }) =>
+              isActive ? 'text-red-500':'text-sky-700'
+            } to="/addToCraft" >Add Craft Item</NavLink></li> 
+    <li className="m-[10px]">
+    <NavLink className={({ isActive }) =>
+              isActive ? 'text-red-500':'text-sky-700'
+            } to="/myCartList" >My Art & Craft List</NavLink>
+    </li>  
 
+    <li className="m-[10px]">
+    <NavLink className={({ isActive }) =>
+              isActive ? 'text-red-500':'text-sky-700'
+            } to="/login" >Login</NavLink>
+    </li> 
+    <li className="m-[10px]">
+    <NavLink className={({ isActive }) =>
+              isActive ? 'text-red-500':'text-sky-700'
+            } to="/registration" >Register</NavLink>
+    </li> 
+
+          
+            
+  </>
 
 const NavBar = () => {
   
+  
+
   return (
     <div>
         <div className="navbar bg-base-100 shadow-lg px-4 fixed z-10">
@@ -27,15 +63,12 @@ const NavBar = () => {
     <a className="btn btn-ghost text-xl">daisyUI</a>
   </div>
   <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1 font-extrabold text-lg uppercase ">
-      <li><a>Home</a></li>
-      <li><a>All Art & craft Items</a></li>
-      <li><a>Add Craft Item</a></li>
-      <li><a>My Art & Craft List</a></li>
-      <li><a>Login</a></li>
-
+    <ul className="menu-horizontal  uppercase">
+      {links}
+    
+     
       
-      <li><a>Register</a></li>
+     
     </ul>
   </div>
   <div className="navbar-end ">
