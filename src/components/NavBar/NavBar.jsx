@@ -1,7 +1,15 @@
 import { NavLink } from "react-router-dom";
 import Toggle from "../Toggle/Toggle";
+import UseAuthContext from "../../hooks/UseAuthContext";
 
-const links = <>
+
+
+const NavBar = () => {
+  const {logout,user} = UseAuthContext();
+
+  // console.log(user);
+  
+  const links = <>
   
   <li className="m-[10px]">
     <NavLink className={({ isActive }) =>
@@ -20,25 +28,34 @@ const links = <>
               isActive ? 'text-red-500':'text-sky-700'
             } to="/myCartList" >My Art & Craft List</NavLink>
     </li>  
+{
+  user?.email? "": 
+  <>
 
     <li className="m-[10px]">
-    <NavLink className={({ isActive }) =>
-              isActive ? 'text-red-500':'text-sky-700'
-            } to="/login" >Login</NavLink>
-    </li> 
-    <li className="m-[10px]">
-    <NavLink className={({ isActive }) =>
-              isActive ? 'text-red-500':'text-sky-700'
-            } to="/registration" >Register</NavLink>
-    </li> 
+      <NavLink className={({ isActive }) =>
+                isActive ? 'text-red-500':'text-sky-700'
+              } to="/login" >Login</NavLink>
+      </li> 
+      <li className="m-[10px]">
+      <NavLink className={({ isActive }) =>
+                isActive ? 'text-red-500':'text-sky-700'
+              } to="/registration" >Register</NavLink>
+      </li> 
+
+  </>
+  
+
+
+}
+    
 
           
             
   </>
 
-const NavBar = () => {
-  
-  
+
+
 
   return (
     <div>
@@ -72,7 +89,11 @@ const NavBar = () => {
     </ul>
   </div>
   <div className="navbar-end ">
-  <div className="dropdown dropdown-end mr-10">
+    {
+
+        user?.email? 
+        
+        <div className="dropdown dropdown-end mr-10">
       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
         <div className="w-10 rounded-full">
           <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
@@ -86,10 +107,17 @@ const NavBar = () => {
           </a>
         </li>
         <li><a>Settings</a></li>
-        <li><a>Logout</a></li>
+        <li><a onClick={logout}>Logout</a></li>
       </ul>
   </div>
+        
+        
+        
+        :""
 
+    }
+ 
+ 
     <div>
           <Toggle></Toggle>
     </div>

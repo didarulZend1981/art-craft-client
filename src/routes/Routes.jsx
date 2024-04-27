@@ -8,6 +8,7 @@ import AddtoCraft from "../pages/AddToCraft/AddtoCraft";
 import MyCartList from "../pages/MyCartList/MyCartList";
 import Login from "../pages/Login/Login";
 import Registration from "../pages/Registration/Registration";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -18,7 +19,10 @@ const router = createBrowserRouter([
     children:[
           {
             path:"/",
-            element:<Home></Home>
+            element: <Home></Home>
+            // <PrivateRoute>
+             //children
+            // </PrivateRoute>
 
           },
          {
