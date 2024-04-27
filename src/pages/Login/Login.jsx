@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import Social from "../../components/Social/Social";
 import { CiLogin } from "react-icons/ci";
 
@@ -6,6 +6,9 @@ import UseAuthContext from "../../hooks/UseAuthContext";
 
 const Login = () => {
   const {signInUser} = UseAuthContext();
+  const location = useLocation();
+  const navigate = useNavigate();
+  console.log('location in login',location);
   const handleLogin = e => {
     e.preventDefault();
     // console.log(e.currentTarget);
@@ -20,6 +23,7 @@ const Login = () => {
          console.log(result.user);
 
          // navigate after login
+         navigate(location?.state?location.state:'/');
         
 
      })

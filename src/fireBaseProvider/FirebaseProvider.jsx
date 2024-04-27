@@ -5,8 +5,8 @@ import auth from "../fireBase/firebaseConfig";
 export const AuthContext = createContext(null);
 const FirebaseProvider = ({children}) => {
   const [user, setUser] = useState(null);
-
-  console.log(user);
+  const [loading,setLoading] = useState(true)
+  console.log(loading);
  //  social provider
  const googleProvider = new GoogleAuthProvider();
  const TwitterProvider = new TwitterAuthProvider();
@@ -15,12 +15,13 @@ const FirebaseProvider = ({children}) => {
 
   //create user
   const createUser =(email, password)=>{
+    setLoading(true)
    return createUserWithEmailAndPassword(auth, email, password)
 
   }
   //singIn User
   const signInUser = (email, password) => {
-    
+    setLoading(true)
     return signInWithEmailAndPassword(auth, email, password);
   }
 
@@ -29,17 +30,17 @@ const FirebaseProvider = ({children}) => {
   
      
   const googleLogin =() =>{
-    
+      setLoading(true)
       return signInWithPopup(auth, googleProvider);
    }
 
    const twitterLogin =() =>{
-    
+    setLoading(true)
     return signInWithPopup(auth, TwitterProvider);
    }
 
    const FacebookLogin =() =>{
-    
+    setLoading(true)
     return signInWithPopup(auth, FacebookProvider);
    }
    //logout
@@ -49,9 +50,13 @@ const FirebaseProvider = ({children}) => {
    }
    //observer
   useEffect(() => {
-    const unSubscribe = onAuthStateChanged(auth, currentUser => {
-        console.log('user in the auth state changed', currentUser);
-        setUser(currentUser);
+    const unSubscribe = onAuthStateChanged(auth, user => {
+        //(( console.log('user in the auth state changed', user);
+        if(user){
+          setUser(user);
+          setLoading(false);
+        }
+       
         
     });
     return () => {
@@ -66,7 +71,8 @@ const FirebaseProvider = ({children}) => {
     googleLogin,
     twitterLogin,
     FacebookLogin,
-    logout
+    logout,
+    loading
   
   }
   return (
