@@ -9,7 +9,7 @@ import UseAuthContext from "../../hooks/UseAuthContext";
 
 const Registration = () => {
   const [showPassword,setShowPassword]=useState(false);
-  const {createUser} = UseAuthContext();
+  const {createUser,updatUserProfile} = UseAuthContext();
   const { register,handleSubmit, formState: { errors } } = useForm();
 
 
@@ -21,10 +21,20 @@ const Registration = () => {
   const onSubmit = (data) => {
     const {email, password,image,fullName} = data
   //  console.log(fullName);
+  //creat user profile update
    createUser(email, password)
             .then(result => {
-                console.log(result.user)
-                navigate(from);
+              updatUserProfile(fullName,image)
+                .then(()=>{
+                  if(result.user){
+                    // console.log(result.user)
+                    navigate(from);
+                  }
+                  
+
+                })
+
+                
             })
             .catch(error => {
                 console.error(error)

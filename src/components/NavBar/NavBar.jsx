@@ -1,15 +1,18 @@
 import { NavLink } from "react-router-dom";
 import Toggle from "../Toggle/Toggle";
 import UseAuthContext from "../../hooks/UseAuthContext";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const NavBar = () => {
-  const {logout,user} = UseAuthContext();
-
-  console.log(user);
-  
+  const {logout,user,successError} = UseAuthContext();
+  // console.log(user);
+  // console.log(user);
+ 
+  console.log('succ',successError);
   const links = <>
+  
   
   <li className="m-[10px]">
     <NavLink className={({ isActive }) =>
@@ -96,19 +99,20 @@ const NavBar = () => {
         <div className="dropdown dropdown-end mr-10">
       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
         <div className="w-10 rounded-full">
-          <img alt="Tailwind CSS Navbar component" src={user.photoURL} />
+          <img alt="image not found" src={user?.photoURL || "image not found"} />
         </div>
       </div>
       <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
         <li>
           <a className="justify-between">
-            User Name:{user.displayName}
+            User Name:{user?.displayName ||"not found"}
             {/* <span className="badge">New</span> */}
           </a>
         </li>
         <li><a>Settings</a></li>
         <li><a>E-mail:{user.email}</a></li>
         <li><a onClick={logout}>Logout</a></li>
+        
       </ul>
   </div>
         
@@ -125,6 +129,7 @@ const NavBar = () => {
  
   </div>
 </div>
+<ToastContainer />
     </div>
   );
 };

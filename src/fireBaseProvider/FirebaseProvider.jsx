@@ -1,11 +1,15 @@
-import { FacebookAuthProvider, GoogleAuthProvider, TwitterAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { FacebookAuthProvider, GoogleAuthProvider, TwitterAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import auth from "../fireBase/firebaseConfig";
 
 export const AuthContext = createContext(null);
 const FirebaseProvider = ({children}) => {
   const [user, setUser] = useState(null);
-  const [loading,setLoading] = useState(true)
+  const [loading,setLoading] = useState(true);
+  const [logError,SetLogError]= useState('');
+  const [successError,SetsuccessError]= useState('');
+
+
   console.log(loading);
  //  social provider
  const googleProvider = new GoogleAuthProvider();
@@ -19,6 +23,22 @@ const FirebaseProvider = ({children}) => {
    return createUserWithEmailAndPassword(auth, email, password)
 
   }
+
+  //update user profile
+  const updatUserProfile = (name,image) =>{
+      return  updateProfile(auth.currentUser, {
+                displayName: name, 
+                photoURL: image
+              })
+              // .then(() => {
+              //   // Profile updated!
+              //   // ...
+              // }).catch((error) => {
+              //   // An error occurred
+              //   // ...
+              // });
+  }
+
   //singIn User
   const signInUser = (email, password) => {
     setLoading(true)
@@ -72,7 +92,12 @@ const FirebaseProvider = ({children}) => {
     twitterLogin,
     FacebookLogin,
     logout,
-    loading
+    loading,
+    updatUserProfile,
+    logError,
+    SetLogError,
+    successError,
+    SetsuccessError
   
   }
   return (

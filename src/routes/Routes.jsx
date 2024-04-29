@@ -9,6 +9,8 @@ import MyCartList from "../pages/MyCartList/MyCartList";
 import Login from "../pages/Login/Login";
 import Registration from "../pages/Registration/Registration";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import CraftsDetails from "../pages/CraftsDetails/CraftsDetails";
+import UpdateCrafts from "../pages/UpdateCrafts/UpdateCrafts";
 
 
 const router = createBrowserRouter([
@@ -25,6 +27,16 @@ const router = createBrowserRouter([
             // </PrivateRoute>
 
           },
+          {
+            path:"CraftsDetails/:id",
+            element:<CraftsDetails></CraftsDetails>
+          },
+
+          {
+            path:"UpdateCrafts/:id",
+            element:<UpdateCrafts></UpdateCrafts>
+          },
+           
          {
           path:"allArtCraft",
           element:<AllArtCraftItem></AllArtCraftItem>
