@@ -13,6 +13,7 @@ import CraftsDetails from "../pages/CraftsDetails/CraftsDetails";
 import UpdateCrafts from "../pages/UpdateCrafts/UpdateCrafts";
 
 
+
 const router = createBrowserRouter([
   {
     path:"/",
@@ -29,12 +30,17 @@ const router = createBrowserRouter([
           },
           {
             path:"CraftsDetails/:id",
-            element:<CraftsDetails></CraftsDetails>
+            
+            element: <CraftsDetails></CraftsDetails>
+            
           },
 
           {
             path:"UpdateCrafts/:id",
-            element:<UpdateCrafts></UpdateCrafts>
+            element:
+            <PrivateRoute>
+            <UpdateCrafts></UpdateCrafts>
+            </PrivateRoute>
           },
            
          {
@@ -43,12 +49,19 @@ const router = createBrowserRouter([
          },
          {
           path:"addToCraft",
-          element:<AddtoCraft></AddtoCraft>
-          
+          element:
+          <PrivateRoute>
+            <AddtoCraft></AddtoCraft>
+            </PrivateRoute>
          },
          {
           path:"myCartList",
-          element:<MyCartList></MyCartList>
+          element:
+          
+          <PrivateRoute>
+            <MyCartList></MyCartList>
+            </PrivateRoute>
+          
           
          },
          {
@@ -60,8 +73,8 @@ const router = createBrowserRouter([
           path:"registration",
           element:<Registration></Registration>
           
-         }
-
+         },
+         
 
 
 

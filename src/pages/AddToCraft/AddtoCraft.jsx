@@ -1,7 +1,7 @@
 
 import UseAuthContext from "../../hooks/UseAuthContext";
 
-
+import Swal from "sweetalert2";
 
 const AddtoCraft = () => {
   const {user} = UseAuthContext()|| {};
@@ -25,7 +25,7 @@ const AddtoCraft = () => {
     const info = { itemName, subcategory_Name, short_description, price, rating,customization,
       processing_time,stockStatus,displayName,email,image
    };
-
+    
    console.log(info)
    fetch("http://localhost:5000/addProduct", {
       method: "POST",
@@ -35,7 +35,12 @@ const AddtoCraft = () => {
       .then(res => res.json())
       .then(data => {
         if (data?.insertedId) {
-        alert("bhai data insert hoice")
+          Swal.fire({
+            title: 'Success!',
+            text: 'Craft ADD Successfully',
+            icon: 'success',
+            confirmButtonText: 'ADD'
+        })
       }
     })
  
@@ -46,7 +51,11 @@ const AddtoCraft = () => {
    
   }
   return (
-    <div className="bg-[#F4F3F0] p-24">
+    // border: 2px solid beige;
+    // width: 800px;
+    // border-radius: 50px;
+    // margin: 25px;
+    <div className="bg-[#F4F3F0] p-24 w-3/5 mx-auto border-spacing-10 margin-5 rounded-lg">
             <h2 className="text-3xl font-extrabold">Add Craft</h2>
             <form onSubmit={handleAddtoCraft}>
                 {/* form name and quantity row */}
@@ -75,14 +84,26 @@ const AddtoCraft = () => {
                             type="text"
                             placeholder="subcategory_Name"
                           >
-                            <option value="Sub Category1" selected>
-                              Sub Category1
+                            <option value="Wooden Furniture & Sculptures" selected>
+                            Wooden Furniture & Sculptures
                             </option>
-                            <option value="Sub Category2" selected>
-                            Sub Category2
+                            <option value="Wooden Home Decor" selected>
+                            Wooden Home Decor
                             </option>
-                            <option value="Sub Category3" selected>
-                              Sub Category3
+                            <option value="Wooden Utensils and Kitchenware" selected>
+                            Wooden Utensils and Kitchenware
+                            </option>
+
+
+                            <option value="Jute Home Decor" selected>
+                            Jute Home Decor
+                            </option>
+                            <option value="Jute Kitchenware & Utensils" selected>
+                            Jute Kitchenware & Utensils
+                            
+                            </option>
+                            <option value="Jute and Wooden Jewelry" selected>
+                            Jute and Wooden Jewelry
                             </option>
                           </select>
                     </div>

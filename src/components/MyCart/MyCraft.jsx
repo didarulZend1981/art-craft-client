@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Swal from 'sweetalert2';
-
+import { RxUpdate } from "react-icons/rx";
+import { MdDeleteForever } from "react-icons/md";
 const MyCraft = ({craft}) => {
   // console.log(craft);
   const { _id,customization,email,displayName,image,itemName,price,processing_time, rating, short_description, stockStatus, subcategory_Name } = craft;
@@ -32,35 +33,38 @@ const MyCraft = ({craft}) => {
 }
   return (
     <div>
-       <div className="card card-side bg-base-100 shadow-xl">
-            <figure><img src="#" alt="Movie" /></figure>
-            <div className="flex justify-between w-full pr-4">
-                <div>
-                    <h2 className="card-title">Name: {itemName}</h2>
-                    <p>{stockStatus}</p>
-                    <p>{price}</p>
-                    <p>{email}</p>
-                    <p>{displayName}</p>
-                </div>
-                <div className="card-actions justify-end">
-                    <div className="btn-group btn-group-vertical space-y-4">
-                        
-                        <Link to={`../UpdateCrafts/${_id}`}>
-                        <button className="btn">edit</button>
+
+<div className="card lg:card-side bg-base-100 min-h-[300px] shadow-xl boreder-red-300 bottom-2">
+          <figure><img src={image} alt="Album" className="w-[150px] h-[150px] p-[15px] rounded-lg"/></figure>
+              <div className="card-body">
+              <h2 className="card-title uppercase">{itemName}</h2>
+              <p >price:{price}</p>
+              <p>Rating:{rating}</p>
+              <p>customization:{customization}</p>
+              <p>Status:{stockStatus}</p>
+              <div className="card-actions">
+              
+              <Link to={`../UpdateCrafts/${_id}`}>
+                        <button className="btn btn-primary"><RxUpdate className="text-[30px]" /></button>
                         </Link>
+
+              <button
+                    onClick={() => handleDelete(_id)}
+                    className="btn btn-primary bg-orange-500"><MdDeleteForever className="text-[30px] whitespace-pre hover:bg-yellow-600" />
+                </button>
+
+                {/* <Link to={`../CraftsDetails/${_id}`}></Link>
+                          <button className="btn">View</button> */}
                         
-                        <Link to={`../CraftsDetails/${_id}`}>
-                        <button className="btn">View</button>
-                        </Link>
-                        <button
-                            onClick={() => handleDelete(_id)}
-                            className="btn bg-orange-500">X
-                        </button>
-                       
-                    </div>
-                </div>
-            </div>
-        </div>
+              </div>
+              </div>
+          </div>
+
+
+
+       
+
+       
     </div>
   );
 };

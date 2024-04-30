@@ -31,6 +31,9 @@ const NavBar = () => {
               isActive ? 'text-red-500':'text-sky-700'
             } to="/myCartList" >My Art & Craft List</NavLink>
     </li>  
+   
+
+
 {
   user?.email? "": 
   <>
@@ -80,7 +83,7 @@ const NavBar = () => {
         <li><a>Item 3</a></li>
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">daisyUI</a>
+    <a className="btn btn-ghost text-xl"><img src="https://i.ibb.co/Z6XQ9m8/Newly.png" className="h-[50px] w-[120px]"/></a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu-horizontal  uppercase">

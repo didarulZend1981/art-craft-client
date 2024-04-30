@@ -19,10 +19,9 @@ const MyCartList = () => {
   }, [user]);
 
   return (
-    <div className="pt-10">
-        {item.length}
-
-
+    <div className="w-4/5 mx-auto">
+        
+        <div className="grid grid-cols-3 gap-5">
         {
           item.map(craft => <MyCraft
             key={craft._id}
@@ -33,6 +32,9 @@ const MyCartList = () => {
 
           </MyCraft>)
         }
+          </div>
+
+        
     </div>
   );
 };

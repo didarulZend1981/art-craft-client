@@ -57,9 +57,9 @@ const Login = () => {
       }
 
   return (
-    <div className="border-[2px] bg-[red]">
-      <div className="h-[20px]"></div>
-      <div className="bg-transparent w-1/3 mx-auto gap-3">
+    <div className="border-[2px]">
+      <div className="h-[18px]"></div>
+      <div className="bg-transparent w-1/3 mx-auto gap-3 py-[50px] mx-50px rounded-2xl">
       <h2 className="text-3xl my-10 text-center">Please Login</h2>
       <form  onSubmit={handleLogin} className="  mt-20 my-auto min-h-max text-center mb-5">
 

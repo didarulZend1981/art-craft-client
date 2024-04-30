@@ -20,7 +20,7 @@ const UpdateCrafts = () => {
   const {_id,itemName,customization,email,displayName,image,price,processing_time,rating,short_description,stockStatus,subcategory_Name}=product;
   const handleUpdate = e => {
     e.preventDefault();
-    //console.log("didar");
+    console.log("didar");
     const form = e.target;
 
     const itemName = form.itemName.value;
@@ -81,15 +81,15 @@ const UpdateCrafts = () => {
 
 
 
-    <div className="bg-[#F4F3F0] p-24">
-            <h2 className="text-3xl font-extrabold">Add Craft-{itemName}</h2>
+    <div className="bg-[#F4F3B0] p-24 w-3/5 mx-auto border-spacing-10 margin-5 rounded-lg">
+            <h2 className="text-3xl font-extrabold">Add Craft</h2>
             <form onSubmit={handleUpdate}>
                 {/* form name and quantity row */}
                
                 <div className="md:flex mb-8 mx-auto">
                     <div className="form-control md:w-1/2">
                         <label className="label">
-                            <span className="label-text"> Name</span>
+                            <span className="label-text text-[15px]"> Name</span>
                         </label>
                         <label className="input-group">
                              <input type="text" name="itemName" defaultValue={itemName} placeholder="name" className="input input-bordered w-full" />
@@ -101,7 +101,7 @@ const UpdateCrafts = () => {
 
 
                         <label className="label">
-                            <span className="label-text">Sub Category Name-{subcategory_Name}</span>
+                            <span className="label-text">Sub Category Name</span>
                         </label>
                           <select
                             name="subcategory_Name"
@@ -112,14 +112,26 @@ const UpdateCrafts = () => {
                             
                           >
                             
-                            <option value="Sub Category1" selected>
-                              Sub Category1
+                            <option value="Wooden Furniture & Sculptures" selected>
+                            Wooden Furniture & Sculptures
                             </option>
-                            <option value="Sub Category2" selected>
-                            Sub Category2
+                            <option value="Wooden Home Decor" selected>
+                            Wooden Home Decor
                             </option>
-                            <option value="Sub Category3" selected>
-                              Sub Category3
+                            <option value="Wooden Utensils and Kitchenware" selected>
+                            Wooden Utensils and Kitchenware
+                            </option>
+
+
+                            <option value="Jute Home Decor" selected>
+                            Jute Home Decor
+                            </option>
+                            <option value="Jute Kitchenware & Utensils" selected>
+                            Jute Kitchenware & Utensils
+                            
+                            </option>
+                            <option value="Jute and Wooden Jewelry" selected>
+                            Jute and Wooden Jewelry
                             </option>
                             <option value={subcategory_Name} selected>
                             {subcategory_Name}
@@ -161,7 +173,7 @@ const UpdateCrafts = () => {
                                   
                     <div className="form-control md:w-1/2 ml-4">
                         <label className="label">
-                            <span className="label-text"> customization-{customization}</span>
+                            <span className="label-text"> customization</span>
                         </label>
                         <label className="input-group">
                         <select
@@ -199,7 +211,7 @@ const UpdateCrafts = () => {
                           
                     <div className="form-control md:w-1/2 ml-4">
                         <label className="label">
-                            <span className="label-text"> stockStatus:-{stockStatus}</span>
+                            <span className="label-text"> StockStatus:</span>
                         </label>
                         <label className="input-group">
                          <label className="input-group">
@@ -247,7 +259,7 @@ const UpdateCrafts = () => {
                         
                     </div>
                 </div>
-                <input type="submit" value="add" className="btn btn-block" />
+                <input type="submit" value="add" className="btn w-full bg-slate-600 text-[white] uppercase hover:red" />
 
             </form>
         </div>

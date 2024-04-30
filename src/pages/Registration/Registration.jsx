@@ -52,6 +52,9 @@ const Registration = () => {
   return (
     <div>
     <div className="h-[70px]"></div>
+    <div>
+      
+    </div>
       <h2 className="text-3xl my-8 text-center">Please Register</h2>
       <form onSubmit={handleSubmit(onSubmit)} className="w-1/3 mx-auto gap-3 mt-10 my-auto min-h-max text-center mb-5">
          
@@ -107,8 +110,11 @@ const Registration = () => {
 
 
          
-</form>
-<Social></Social>
+       </form>
+      <div className="w-1/3 mx-auto text-center ">
+      <Social></Social>
+      </div>
+     
 
 
 <p className="w-1/3 mx-auto text-center mt-3 border-t-2 pt-5 mb-[20px]">You have account  <NavLink to="/login" className="text-[red]">Login</NavLink></p>
