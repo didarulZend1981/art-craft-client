@@ -9,7 +9,7 @@ const UpdateCrafts = () => {
   const [product,setProduct]=useState({});
   // console.log(product);
   useEffect(()=>{
-    fetch(`http://localhost:5000/singleProduct/${id}`)
+    fetch(`https://b9a10-server-side-didarul-zend1981.vercel.app/singleProduct/${id}`)
     .then(res=>res.json())
     .then(data=>{
       setProduct(data)

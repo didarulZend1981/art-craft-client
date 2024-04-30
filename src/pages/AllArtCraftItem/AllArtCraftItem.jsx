@@ -7,7 +7,7 @@ const AllArtCraftItem = () => {
   const [item, setItem] = useState([]);
   console.log(item);
   useEffect(() => {
-    fetch('http://localhost:5000/allProduct')
+    fetch('https://b9a10-server-side-didarul-zend1981.vercel.app/allProduct')
       .then((res) => res.json())
       .then((data) => {
         setItem(data);

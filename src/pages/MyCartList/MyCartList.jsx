@@ -10,7 +10,7 @@ const MyCartList = () => {
   
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myProduct/${user?.email}`)
+    fetch(`https://b9a10-server-side-didarul-zend1981.vercel.app/myProduct/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setItem(data);

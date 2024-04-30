@@ -27,7 +27,7 @@ const AddtoCraft = () => {
    };
     
    console.log(info)
-   fetch("http://localhost:5000/addProduct", {
+   fetch("https://b9a10-server-side-didarul-zend1981.vercel.app/addProduct", {
       method: "POST",
       headers: { "Content-type": "application/json" },
       body:JSON.stringify(info)
