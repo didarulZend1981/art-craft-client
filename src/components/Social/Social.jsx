@@ -1,10 +1,10 @@
 import { FaGooglePlusG } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
+
 import UseAuthContext from "../../hooks/UseAuthContext";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const Social = () => {
-  const {googleLogin,twitterLogin,FacebookLogin} =UseAuthContext();
+  const {googleLogin,FacebookLogin} =UseAuthContext();
   //navigation 
   const navigate = useNavigate();
   const location = useLocation();
@@ -27,10 +27,9 @@ const Social = () => {
             <button onClick={()=>handleSocialLogin(googleLogin)} className="btn btn-outline btn-primary"><FaGooglePlusG className='text-[red]'/> Google</button>
 
 
-            <button onClick={()=>handleSocialLogin(twitterLogin)} className="btn btn-outline btn-primary"><FaGooglePlusG className='text-[red]'/> Twitter</button>
-
+           
             <button onClick={()=>handleSocialLogin(FacebookLogin)} className="btn btn-outline btn-primary"><FaGooglePlusG className='text-[red]'/> Facebook</button>
-             <button  className="btn btn-outline btn-secondary"><FaGithub className='text-[green]'/> GitHub</button>
+             
       </div>
     </div>
   );
