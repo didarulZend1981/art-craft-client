@@ -1,5 +1,5 @@
 import { FaGooglePlusG } from "react-icons/fa";
-
+import { TiSocialFacebook } from "react-icons/ti";
 import UseAuthContext from "../../hooks/UseAuthContext";
 import { useLocation, useNavigate } from "react-router-dom";
 
@@ -28,7 +28,7 @@ const Social = () => {
 
 
            
-            <button onClick={()=>handleSocialLogin(FacebookLogin)} className="btn btn-outline btn-primary"><FaGooglePlusG className='text-[red]'/> Facebook</button>
+            <button onClick={()=>handleSocialLogin(FacebookLogin)} className="btn btn-outline btn-primary"><TiSocialFacebook className='text-[red]'/> Facebook</button>
              
       </div>
     </div>
