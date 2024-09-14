@@ -54,7 +54,7 @@ const Login = () => {
    
 
 
-      }
+  }
 
   return (
     <div className="border-[2px]">

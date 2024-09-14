@@ -13,7 +13,7 @@ const FirebaseProvider = ({children}) => {
   console.log(loading);
  //  social provider
  const googleProvider = new GoogleAuthProvider();
-  const FacebookProvider = new FacebookAuthProvider();
+ const FacebookProvider = new FacebookAuthProvider();
 
 
   //create user

@@ -13,7 +13,7 @@ const CraftsDetails = () => {
 const {itemName,image,customization,email,price,processing_time,rating ,short_description,stockStatus,subcategory_Name,displayName} =product;
 
 
-
+const [category,setCategory] =useState([]);
 
   useEffect(()=>{
     fetch(`https://b9a10-server-side-didarul-zend1981.vercel.app/singleProduct/${id}`)

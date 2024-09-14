@@ -29,7 +29,7 @@ const Home = () => {
         <div className="hero bg-base-200 rounded-lg">
           <div className="hero-content text-center">
             <div className="max-w-md">
-              <h1 className="text-5xl font-bold">Wait UpCamming .....</h1>
+              <h1 className="text-5xl font-bold">Wait UpCamming .....100</h1>
               <p className="py-6">Very soon in Apande quite a few choice jute and wooden craft products are coming in the market stay with us so that I can bring you quality quality products........</p>
               <button className="btn btn-primary">Get Started</button>
             </div>
