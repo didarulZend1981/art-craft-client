@@ -75,7 +75,7 @@ const NavBar = () => {
          {links}
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl"><img src="https://i.ibb.co/Z6XQ9m8/Newly.png" className="h-[50px] w-[120px]"/></a>
+    <a className="btn btn-ghost text-xl"><img src="https://i.ibb.co.com/w4fHBNm/logo-2.webp" className="h-[50px] w-[120px]"/></a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu-horizontal  uppercase">
