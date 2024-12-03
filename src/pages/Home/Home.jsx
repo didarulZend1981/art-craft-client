@@ -29,9 +29,9 @@ const Home = () => {
         <div className="hero bg-base-200 rounded-lg">
           <div className="hero-content text-center">
             <div className="max-w-md">
-              <h1 className="text-5xl font-bold">Wait UpCamming .....105</h1>
+              <h1 className="text-5xl font-bold">Wait UpCamming .....</h1>
               <p className="py-6">Very soon in Apande quite a few choice jute and wooden craft products are coming in the market stay with us so that I can bring you quality quality products........</p>
-              <button className="btn btn-primary">Get Started</button>
+              {/*<button className="btn btn-primary">Get Started</button>*/}
             </div>
           </div>
         </div>
@@ -40,8 +40,8 @@ const Home = () => {
 
        <div className="w-4/5 mx-auto mb-10">
 
-       <h2 className="text-center mb-10 mt-10 uppercase text-cyan-500 text-[20px]">Discount Offer</h2>
-       <Offer></Offer>
+       {/*<h2 className="text-center mb-10 mt-10 uppercase text-cyan-500 text-[20px]">Discount Offer</h2>*/}
+       {/*<Offer></Offer>*/}
 
 
         
