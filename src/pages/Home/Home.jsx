@@ -16,7 +16,7 @@ const Home = () => {
        <CardSection></CardSection>
        <div className="w-4/5 mx-auto mb-10">
 
-       <h2 className="text-center mb-10 mt-10 uppercase text-cyan-500 text-[20px]"> cartory Sectio14 </h2>
+       <h2 className="text-center mb-10 mt-10 uppercase text-cyan-500 text-[20px]"> Category Section </h2>
        <CategorySection>
 
        </CategorySection>
